@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.imzhiqiang.glidedemo.posts.PostTwoActivity"
+    tools:showIn="@layout/activity_post_two">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <org.apmem.tools.layouts.FlowLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
+            app:layoutDirection="ltr"
+            app:weightDefault="1.0"
+            >
+
+            <Button
+                android:id="@+id/btn_intent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load from Intent"
+                tools:ignore="HardcodedText"/>
+
+            <Button
+                android:id="@+id/btn_uri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load from Uri"
+                tools:ignore="HardcodedText"/>
+
+            <Button
+                android:id="@+id/btn_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load from File"
+                tools:ignore="HardcodedText"/>
+
+            <Button
+                android:id="@+id/btn_res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load from Resource"
+                tools:ignore="HardcodedText"/>
+
+            <Button
+                android:id="@+id/btn_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load a simple gallery"
+                tools:ignore="HardcodedText"/>
+        </org.apmem.tools.layouts.FlowLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/current_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:textSize="18sp"
+            tools:ignore="UnusedAttribute"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
