@@ -55,7 +55,7 @@ public class SimpleGalleryActivity extends BaseActivity implements LoaderManager
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         mLoadingDialog = new MaterialDialog.Builder(this)
-                .content("正在加载相册...")
+                .content("Loading photo album...")
                 .progress(true, 0)
                 .build();
         mLoadingDialog.show();
@@ -84,7 +84,7 @@ public class SimpleGalleryActivity extends BaseActivity implements LoaderManager
                 mLoadingDialog.dismiss();
             }
             mLoadingDialog = new MaterialDialog.Builder(this)
-                    .content("正在加载相册...")
+                    .content("Loading photo album...")
                     .progress(true, 0)
                     .build();
             mLoadingDialog.show();
