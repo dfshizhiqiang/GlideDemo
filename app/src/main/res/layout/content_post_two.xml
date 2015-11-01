@@ -52,6 +52,13 @@
                 tools:ignore="HardcodedText"/>
 
             <Button
+                android:id="@+id/btn_custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load from Custom Source"
+                tools:ignore="HardcodedText"/>
+
+            <Button
                 android:id="@+id/btn_gallery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,8 +68,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_gravity="center_horizontal"/>
 
         <TextView

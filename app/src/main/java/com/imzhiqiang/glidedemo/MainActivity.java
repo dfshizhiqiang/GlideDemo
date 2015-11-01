@@ -9,6 +9,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import static com.imzhiqiang.glidedemo.util.Constants.IMG_NAME;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -30,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private void copyFile() {
         InputStream is;
         try {
-            is = getAssets().open("dog.jpg");
-            FileOutputStream fos = new FileOutputStream(new File(getFilesDir(), "dog.jpg"));
+            is = getAssets().open(IMG_NAME);
+            FileOutputStream fos = new FileOutputStream(new File(getFilesDir(), IMG_NAME));
             byte[] buffer = new byte[1024];
             int byteCount;
             while ((byteCount = is.read(buffer)) != -1) {
