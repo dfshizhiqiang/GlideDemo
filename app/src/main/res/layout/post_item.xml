@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:textSize="20sp"
         tools:text="Title"/>
 
@@ -20,7 +20,7 @@
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="6dp"
         android:textSize="16sp"
         tools:text="SubTitle"/>
 

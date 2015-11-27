@@ -20,7 +20,9 @@ public class BaseActivity extends AppCompatActivity {
         if (mToolbar == null) {
             mToolbar = (Toolbar) findViewById(R.id.toolbar);
             mToolbar.setTitle(getClass().getSimpleName());
-            mToolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+            setSupportActionBar(mToolbar);
+            if (getSupportActionBar() != null)
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

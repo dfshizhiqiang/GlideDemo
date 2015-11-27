@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
 
+        setSupportActionBar(toolbar);
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main_content, new MainFragment())
