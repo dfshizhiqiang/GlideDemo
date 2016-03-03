@@ -8,6 +8,7 @@ import android.widget.ListView;
 
 import com.imzhiqiang.glidedemo.adapters.PostAdapter;
 import com.imzhiqiang.glidedemo.posts.PostOneActivity;
+import com.imzhiqiang.glidedemo.posts.PostThreeActivity;
 import com.imzhiqiang.glidedemo.posts.PostTwoActivity;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class MainFragment extends ListFragment {
         posts = new ArrayList<>();
         posts.add(new Post("Post 1", "Hello,Glide"));
         posts.add(new Post("Post 2", "Load images from different data sources"));
+        posts.add(new Post("Post 3", "Placeholders in Glide"));
 
         setListAdapter(new PostAdapter(getActivity(), posts));
     }
@@ -40,6 +42,9 @@ public class MainFragment extends ListFragment {
                 break;
             case 1:
                 startActivity(PostTwoActivity.class);
+                break;
+            case 2:
+                startActivity(PostThreeActivity.class);
             default:
                 break;
         }
