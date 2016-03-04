@@ -1,7 +1,11 @@
 package com.imzhiqiang.glidedemo.posts;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,9 +19,12 @@ import java.io.File;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.RuntimePermissions;
 
 import static com.imzhiqiang.glidedemo.util.Constants.IMG_NAME;
 
+@RuntimePermissions
 public class PostTwoActivity extends BaseActivity {
 
     private RequestManager requestManager;
@@ -40,6 +47,12 @@ public class PostTwoActivity extends BaseActivity {
 
         requestManager = Glide.with(this);
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PostTwoActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
     }
 
     @OnClick(R.id.btn_intent)
@@ -93,9 +106,15 @@ public class PostTwoActivity extends BaseActivity {
         currentSource.setText("From Custom Source");
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+    public void startGallery() {
+        startActivity(new Intent(this, SimpleGalleryActivity.class));
+    }
+
     @OnClick(R.id.btn_gallery)
     public void loadGallery() {
-        startActivity(new Intent(this, SimpleGalleryActivity.class));
+        PostTwoActivityPermissionsDispatcher.startGalleryWithCheck(this);
     }
 
     @Override
