@@ -20,8 +20,9 @@ public class BaseActivity extends AppCompatActivity {
             mToolbar = (Toolbar) findViewById(R.id.toolbar);
             mToolbar.setTitle(getClass().getSimpleName());
             setSupportActionBar(mToolbar);
-            if (getSupportActionBar() != null)
+            if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
             mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

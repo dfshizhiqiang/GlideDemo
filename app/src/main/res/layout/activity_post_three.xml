@@ -6,14 +6,16 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.imzhiqiang.glidedemo.posts.PostThreeActivity">
+    tools:context="com.imzhiqiang.glidedemo.posts.PostThreeActivity"
+    >
 
-    <include layout="@layout/tool_bar"/>
+  <include layout="@layout/tool_bar"/>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="300dp"
-        android:scaleType="centerCrop"
-        android:layout_height="300dp"/>
+  <ImageView
+      android:id="@+id/imageView3"
+      android:layout_width="300dp"
+      android:layout_height="300dp"
+      android:scaleType="centerCrop"
+      />
 
 </LinearLayout>

@@ -61,8 +61,8 @@ public class SimpleGalleryActivity extends BaseActivity
                         MediaStore.Images.Media.DATA, MediaStore.Images.Media._ID,
                         MediaStore.Images.ImageColumns.ORIENTATION
                 };
-                return new CursorLoader(this, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, columns, null,
-                        null, MediaStore.Images.Media.DATE_TAKEN + " DESC");
+                return new CursorLoader(this, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, columns,
+                        null, null, MediaStore.Images.Media.DATE_TAKEN + " DESC");
         }
 
         return null;

@@ -50,7 +50,7 @@ public class PostTwoActivity extends BaseActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PostTwoActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode,
                 grantResults);
