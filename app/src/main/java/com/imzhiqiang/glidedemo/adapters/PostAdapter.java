@@ -15,7 +15,6 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-
 public class PostAdapter extends BaseAdapter {
 
     private Context context;

@@ -14,7 +14,6 @@ import com.imzhiqiang.glidedemo.posts.PostTwoActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MainFragment extends ListFragment {
 
     private List<Post> posts;
@@ -30,7 +29,6 @@ public class MainFragment extends ListFragment {
 
         setListAdapter(new PostAdapter(getActivity(), posts));
     }
-
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -48,7 +46,6 @@ public class MainFragment extends ListFragment {
             default:
                 break;
         }
-
     }
 
     private void startActivity(Class<?> cls) {
@@ -85,5 +82,4 @@ public class MainFragment extends ListFragment {
             return title + subtitle;
         }
     }
-
 }

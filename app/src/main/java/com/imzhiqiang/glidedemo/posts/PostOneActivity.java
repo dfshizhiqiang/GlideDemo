@@ -1,6 +1,5 @@
 package com.imzhiqiang.glidedemo.posts;
 
-
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -16,9 +15,6 @@ public class PostOneActivity extends BaseActivity {
 
         ImageView targetImageView = (ImageView) findViewById(R.id.imageView);
         String internetUrl = "http://img1.ph.126.net/gGRsUgEni_P9xFrirRs2Ww==/6630801683887325749.jpg";
-        Glide
-                .with(this)
-                .load(internetUrl)
-                .into(targetImageView);
+        Glide.with(this).load(internetUrl).into(targetImageView);
     }
 }

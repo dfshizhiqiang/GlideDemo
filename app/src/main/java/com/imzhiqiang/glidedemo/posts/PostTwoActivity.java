@@ -46,63 +46,53 @@ public class PostTwoActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         requestManager = Glide.with(this);
-
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PostTwoActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+        PostTwoActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode,
+                grantResults);
     }
 
     @OnClick(R.id.btn_intent)
     public void loadIntent() {
         String url = "http://img0.ph.126.net/mXB8X0xkfgebar2kOH0WGw==/6631309658258301075.jpg";
-        requestManager
-                .load(url)
-                .into(imageView);
+        requestManager.load(url).into(imageView);
         currentSource.setText("From Intent");
     }
 
     @OnClick(R.id.btn_uri)
     public void loadUri() {
-        requestManager
-                .load(Tools.resourceIdToUri(this, R.drawable.glide_logo))
-                .into(imageView);
+        requestManager.load(Tools.resourceIdToUri(this, R.drawable.glide_logo)).into(imageView);
         currentSource.setText("From Uri");
     }
 
     @OnClick(R.id.btn_file)
     public void loadFile() {
-        requestManager
-                .load(new File(getFilesDir(), IMG_NAME))
-                .into(imageView);
+        requestManager.load(new File(getFilesDir(), IMG_NAME)).into(imageView);
         currentSource.setText("From File");
     }
 
     @OnClick(R.id.btn_res)
     public void loadRes() {
-        requestManager
-                .load(R.mipmap.ic_launcher)
-                .into(imageView);
+        requestManager.load(R.mipmap.ic_launcher).into(imageView);
         currentSource.setText("From Res");
     }
 
     @OnClick(R.id.btn_custom)
     public void loadCustom() {
-        requestManager
-                .using(new MyUrlLoader(this))
-                .load(new MyDataModel() {//用两张不同的图片模拟不同尺寸大小
-                    @Override
-                    public String buidUrl(int width, int height) {
-                        if (width >= 600) {//在1080p的手机上看到url1
-                            return url1;
-                        } else {//在720p的手机上看到url2
-                            return url2;
-                        }
-                    }
-                })
-                .into(imageView);
+        requestManager.using(new MyUrlLoader(this)).load(new MyDataModel() {//用两张不同的图片模拟不同尺寸大小
+            @Override
+            public String buidUrl(int width, int height) {
+                if (width >= 600) {//在1080p的手机上看到url1
+                    return url1;
+                } else {//在720p的手机上看到url2
+                    return url2;
+                }
+            }
+        }).into(imageView);
         currentSource.setText("From Custom Source");
     }
 
