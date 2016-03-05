@@ -26,6 +26,7 @@ dependencies {
     compile 'com.android.support:design:23.2.0'
     compile 'com.github.bumptech.glide:glide:4.0.0-SNAPSHOT'
     compile 'com.github.bumptech.glide:okhttp-integration:2.0.0-SNAPSHOT'
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'org.apmem.tools:layouts:1.10@aar'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile('com.github.afollestad.material-dialogs:core:0.8.5.6@aar') {
