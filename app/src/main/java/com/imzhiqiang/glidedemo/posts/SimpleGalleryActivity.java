@@ -119,7 +119,7 @@ public class SimpleGalleryActivity extends BaseActivity
                         final String originalUrl = cursor.getString(dataColumnIndex);
                         final String url = "file://" + originalUrl;
 
-                        Glide.with(SimpleGalleryActivity.this).load(url).into(holder.picture);
+                        Glide.with(SimpleGalleryActivity.this).asDrawable().load(url).into(holder.picture);
                     }
                 }
             }
