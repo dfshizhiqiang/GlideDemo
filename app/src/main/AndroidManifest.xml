@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.imzhiqiang.glidedemo">
+<manifest package="com.imzhiqiang.glidedemo"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
-  <application
-      android:allowBackup="true"
-      android:icon="@mipmap/ic_launcher"
-      android:label="@string/app_name"
-      android:theme="@style/AppTheme.NoActionBar">
-    <activity
-        android:name=".MainActivity"
-        android:screenOrientation="portrait">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
 
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
-    </activity>
-    <activity android:name=".posts.PostOneActivity"/>
-    <activity android:name=".posts.PostTwoActivity"/>
-    <activity android:name=".posts.SimpleGalleryActivity"/>
-    <activity android:name=".posts.PostThreeActivity"/>
-  </application>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".posts.PostOneActivity"/>
+        <activity android:name=".posts.PostTwoActivity"/>
+        <activity android:name=".posts.SimpleGalleryActivity"/>
+        <activity android:name=".posts.PostThreeActivity"/>
+
+        <meta-data
+            android:name="com.imzhiqiang.glidedemo.util.MyGlideModel"
+            android:value="GlideModule"/>
+    </application>
 
 </manifest>

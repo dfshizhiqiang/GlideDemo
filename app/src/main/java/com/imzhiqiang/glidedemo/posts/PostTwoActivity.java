@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.imzhiqiang.glidedemo.R;
+import com.imzhiqiang.glidedemo.util.MyDataModel;
 import com.imzhiqiang.glidedemo.util.Tools;
 
 import java.io.File;
@@ -83,7 +84,16 @@ public class PostTwoActivity extends BaseActivity {
 
     @OnClick(R.id.btn_custom)
     public void loadCustom() {
-        //TODO
+        requestManager.asDrawable().load(new MyDataModel() {
+            @Override
+            public String buildUrl(int width, int height) {
+                if (width >= 600) {//在1080p的手机上看到url1
+                    return url1;
+                } else {//在720p的手机上看到url2
+                    return url2;
+                }
+            }
+        }).into(imageView);
         currentSource.setText("From Custom Source");
     }
 
