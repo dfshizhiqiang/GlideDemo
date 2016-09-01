@@ -23,6 +23,7 @@
     <activity android:name=".posts.PostTwoActivity"/>
     <activity android:name=".posts.SimpleGalleryActivity"/>
     <activity android:name=".posts.PostThreeActivity"/>
+    <activity android:name=".posts.GalleryUseRecyclerViewActivity"/>
   </application>
 
 </manifest>

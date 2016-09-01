@@ -5,10 +5,10 @@
     android:orientation="vertical"
     >
 
-  <ImageView
+  <com.imzhiqiang.glidedemo.posts.SquareImageView
       android:id="@+id/pic"
-      android:layout_width="88dp"
-      android:layout_height="88dp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
       />
 
 </LinearLayout>

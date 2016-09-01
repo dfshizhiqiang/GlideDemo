@@ -107,6 +107,17 @@ public class PostTwoActivity extends BaseActivity {
         PostTwoActivityPermissionsDispatcher.startGalleryWithCheck(this);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+    public void startGalleryUseRecyclerView() {
+        startActivity(new Intent(this, GalleryUseRecyclerViewActivity.class));
+    }
+
+    @OnClick(R.id.btn_gallery_use_recyclerview)
+    public void loadGalleryUseRecyclerView() {
+        PostTwoActivityPermissionsDispatcher.startGalleryUseRecyclerViewWithCheck(this);
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

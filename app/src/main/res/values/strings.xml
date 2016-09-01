@@ -3,4 +3,7 @@
 
   <string name="title_activity_post_two">PostTwoActivity</string>
   <string name="title_activity_post_three">PostThreeActivity</string>
+  <string name="linear_layout_manager">LinearLayoutManager</string>
+  <string name="grid_layout_manager">GridLayoutManager</string>
+  <string name="staggered_grid_layout_manager">StaggeredGridLayoutManager</string>
 </resources>

@@ -72,6 +72,14 @@
           android:text="load a simple gallery"
           tools:ignore="HardcodedText"
           />
+
+      <Button
+          android:id="@+id/btn_gallery_use_recyclerview"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="load a simple gallery use recyclerview"
+          tools:ignore="HardcodedText"
+          />
     </org.apmem.tools.layouts.FlowLayout>
 
     <ImageView

@@ -34,6 +34,7 @@ public class SimpleGalleryActivity extends BaseActivity
         mGallery = (GridView) findViewById(R.id.gallery);
         mGallery.setNumColumns(4);
         mGallery.setHorizontalSpacing(5);
+        mGallery.setVerticalSpacing(5);
         mAdapter = new GalleryAdapter(this, null, false);
         mGallery.setAdapter(mAdapter);
         getSupportLoaderManager().initLoader(THUMBNAIL_LOAD, null, this);
@@ -119,7 +120,10 @@ public class SimpleGalleryActivity extends BaseActivity
                         final String originalUrl = cursor.getString(dataColumnIndex);
                         final String url = "file://" + originalUrl;
 
-                        Glide.with(SimpleGalleryActivity.this).load(url).into(holder.picture);
+                        Glide.with(SimpleGalleryActivity.this)
+                                .load(url)
+                                .centerCrop()
+                                .into(holder.picture);
                     }
                 }
             }

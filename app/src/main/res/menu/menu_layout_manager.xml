@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/action_linear"
+      android:title="@string/linear_layout_manager"/>
+  <item
+      android:id="@+id/action_grid"
+      android:title="@string/grid_layout_manager"/>
+  <item
+      android:id="@+id/action_stagger"
+      android:title="@string/staggered_grid_layout_manager"/>
+</menu>
