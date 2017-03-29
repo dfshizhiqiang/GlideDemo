@@ -6,14 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.imzhiqiang.glidedemo.MainFragment;
 import com.imzhiqiang.glidedemo.R;
-
 import java.util.List;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class PostAdapter extends BaseAdapter {
 
@@ -58,10 +55,10 @@ public class PostAdapter extends BaseAdapter {
     }
 
     public static class ViewHolder {
-        @Bind(R.id.title)
+        @BindView(R.id.title)
         TextView title;
 
-        @Bind(R.id.subtitle)
+        @BindView(R.id.subtitle)
         TextView subtitle;
 
         public ViewHolder(View view) {

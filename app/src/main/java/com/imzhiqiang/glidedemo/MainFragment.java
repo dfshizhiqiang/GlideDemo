@@ -16,13 +16,11 @@ import java.util.List;
 
 public class MainFragment extends ListFragment {
 
-    private List<Post> posts;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        posts = new ArrayList<>();
+        List<Post> posts = new ArrayList<>();
         posts.add(new Post("Post 1", "Hello,Glide"));
         posts.add(new Post("Post 2", "Load images from different data sources"));
         posts.add(new Post("Post 3", "Placeholders in Glide"));
@@ -43,6 +41,7 @@ public class MainFragment extends ListFragment {
                 break;
             case 2:
                 startActivity(PostThreeActivity.class);
+                break;
             default:
                 break;
         }

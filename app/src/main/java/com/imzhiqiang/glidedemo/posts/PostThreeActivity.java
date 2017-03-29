@@ -19,6 +19,10 @@ public class PostThreeActivity extends BaseActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.imageView3);
 
-        Glide.with(this).load(url).thumbnail(Glide.with(this).load(thumbnailUrl)).into(imageView);
+        Glide.with(this)
+                .load(url)
+                .thumbnail(Glide.with(this).load(thumbnailUrl))
+                .skipMemoryCache(true)
+                .into(imageView);
     }
 }

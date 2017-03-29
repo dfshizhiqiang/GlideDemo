@@ -16,13 +16,15 @@
       android:orientation="vertical"
       >
 
-    <org.apmem.tools.layouts.FlowLayout
+    <com.google.android.flexbox.FlexboxLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="fill"
-        app:layoutDirection="ltr"
-        app:weightDefault="1.0"
+        app:alignContent="flex_start"
+        app:alignItems="flex_start"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start"
         >
 
       <Button
@@ -80,7 +82,7 @@
           android:text="load a simple gallery use recyclerview"
           tools:ignore="HardcodedText"
           />
-    </org.apmem.tools.layouts.FlowLayout>
+    </com.google.android.flexbox.FlexboxLayout>
 
     <ImageView
         android:id="@+id/imageView2"

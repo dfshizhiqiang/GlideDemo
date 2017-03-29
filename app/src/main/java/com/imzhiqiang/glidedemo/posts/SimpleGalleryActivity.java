@@ -7,29 +7,30 @@ import android.provider.MediaStore;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v4.widget.CursorAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
-
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.imzhiqiang.glidedemo.R;
 
-public class SimpleGalleryActivity extends BaseActivity
+public class SimpleGalleryActivity extends BaseGalleryActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int THUMBNAIL_LOAD = 1101;
 
     private GridView mGallery;
     private CursorAdapter mAdapter;
 
-    private MaterialDialog mLoadingDialog;
+    private ContentLoadingProgressBar mLoadingProgressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_gallery);
+
+        mLoadingProgressBar = (ContentLoadingProgressBar) findViewById(R.id.content_progress_bar);
 
         mGallery = (GridView) findViewById(R.id.gallery);
         mGallery.setNumColumns(4);
@@ -43,19 +44,13 @@ public class SimpleGalleryActivity extends BaseActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
-            mLoadingDialog.dismiss();
-            mLoadingDialog = null;
-        }
+        mLoadingProgressBar.hide();
         getLoaderManager().destroyLoader(THUMBNAIL_LOAD);
     }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        mLoadingDialog = new MaterialDialog.Builder(this).content("Loading photo album...")
-                .progress(true, 0)
-                .build();
-        mLoadingDialog.show();
+        mLoadingProgressBar.show();
         switch (id) {
             case THUMBNAIL_LOAD:
                 final String[] columns = {
@@ -72,21 +67,13 @@ public class SimpleGalleryActivity extends BaseActivity
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mAdapter.changeCursor(data);
-        if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
-            mLoadingDialog.dismiss();
-        }
+        mLoadingProgressBar.hide();
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         if (!isFinishing()) {
-            if (mLoadingDialog != null) {
-                mLoadingDialog.dismiss();
-            }
-            mLoadingDialog = new MaterialDialog.Builder(this).content("Loading photo album...")
-                    .progress(true, 0)
-                    .build();
-            mLoadingDialog.show();
+            mLoadingProgressBar.show();
         }
         mAdapter.changeCursor(null);
     }
