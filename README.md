@@ -4,7 +4,7 @@ A demo describes how to load images by using Glide
 
 一个展示了如何使用Glide加载图片的示例
 
-###最简单的加载方式
+### 最简单的加载方式
 
 ```java
 ImageView targetImageView = (ImageView) findViewById(R.id.imageView);
@@ -20,7 +20,7 @@ Glide.with(context)
 
 .into(ImageView targetImageView)，你要加载的Imageview控件，当然也可以一个view。
 
-###从不同的数据源加载图片
+### 从不同的数据源加载图片
 
 .load(String string) string可以为一个文件路径、uri或者url
 
